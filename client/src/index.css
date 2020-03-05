@@ -1,0 +1,200 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: '-webkit-pictograph';
+}
+
+img {
+  width: 100%;
+}
+
+.flex-container{
+  width:100%
+}
+
+/* -------------LANDING PAGE -------------*/
+
+.headerItem{
+  display: flex;
+  width:100%;
+  margin-top: 30px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.infoItem{
+  display: flex;
+  justify-content: center;
+  margin-top: 23px;
+  margin-left: 13px;
+}
+
+.nextItem{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nextItem img {
+  width: 79px
+}
+
+.buildItem{
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+
+.linksItem{
+  display: flex;
+  justify-content: space-around;
+}
+
+.footerItem{
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.footerItem img{
+width: 46px
+}
+
+/* -------------CITIES PAGE------------- */
+
+.filter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+#filter{
+  border: 1px solid black;
+  margin-top: 4px;
+}
+
+.city-list{
+display: flex;
+width: 95%;
+margin-right: -5px;
+
+}
+
+li{
+  list-style-type: none;
+  
+}
+ 
+a{ 
+  text-decoration: blink;
+  color: black;
+}
+
+/* -------------ITINERARIES PAGE------------- */
+
+.itineraries-list{
+  display: grid;
+  grid-gap:26px;
+  
+}
+
+.itineraryItem{
+  display: grid;
+  border: 1px solid black;
+  
+}
+.titleIt{
+  grid-column: 2/ span 3;
+  grid-row:1;
+}
+
+.detailsIt{
+  grid-column: 2/span 3;
+  grid-row:2;
+  display: flex;
+  justify-content: space-around;
+}
+
+.hashtag{
+  grid-column: 2/span 3;
+  grid-row: 3;
+  display: flex;
+  
+}
+.viewAll{
+  display: flex;
+  grid-column: 1/span 4;
+  grid-row:4;
+  background-color: grey;
+  flex-direction: column;
+}
+
+.user{
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+.user img{
+  width: 63px;
+}
+
+.cityCard {
+  display: flex;
+    justify-content: center;
+    /* border: 1px solid black; */
+    /* padding: 12px; */
+    /* margin-bottom: 14px; */
+}
+
+/* ------------ACTIVITIES COMPONENT------------- */
+.activities{
+  flex-wrap: nowrap;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+display: flex;
+flex-direction: row;
+margin-right: 1px;
+}
+
+/* -------------NEW ACCOUNT PAGE ------------------ */
+
+.form-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 45px
+}
+
+input{
+  border: 1px solid black;
+  size: 5px;
+}
+
+
+select {
+  margin-left: 8px;
+  height: 26px;
+  background-image:
+    linear-gradient(45deg, black 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, black 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+  calc(106% - 18px) 1em,
+  calc(103% - 20px) 1em,
+  calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+  border-color:black 50%;
+  outline: 0;
+}
+
+button{
+  border: 1px solid black;
+}
