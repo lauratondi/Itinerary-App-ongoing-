@@ -28,7 +28,7 @@ export const fetchUser = (email, password) => {
     console.log(email, password)
     return (dispatch) => {
         dispatch(userRequest())
-        axios.post("http://localhost:5000/user", {
+        axios.post("/user", {
             'email': email,
             'password': password
         }, {

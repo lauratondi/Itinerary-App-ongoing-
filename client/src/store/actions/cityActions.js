@@ -28,7 +28,7 @@ export const fetchCitiesFailure = (error) => {
 export const fetchCityList = () => {
     return function (dispatch) {
         dispatch(fetchCitiesRequest())
-        return fetch("http://localhost:5000/cities/all")
+        return fetch("/cities/all")
             .then(
                 response => response.json(),
                 error => console.log("An error occured", error)

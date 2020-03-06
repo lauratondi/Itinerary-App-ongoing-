@@ -26,7 +26,7 @@ export const fetchItineraryList = (city) => {
     return function (dispatch) {
 
         dispatch(fetchItinerariesRequest())
-        return fetch(`http://localhost:5000/itineraries/${city}`)
+        return fetch(`/itineraries/${city}`)
             .then(
                 response => response.json(),
                 console.log("hey"),

@@ -27,7 +27,7 @@ export const loginFailure = (error) => {
 export const fetchLogin = (email, password) => {
     return (dispatch) => {
         dispatch(loginRequest())
-        axios.post("http://localhost:5000/login", {
+        axios.post("/login", {
             'email': email,
             'password': password
         }).then(response => {
