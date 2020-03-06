@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors());
 
-app.use(express.static(__dirname, 'client', 'build'));
+app.use(express.static(__dirname, 'client'));
 
 // We create a variable for the port to be able to run the server
 const port = process.env.PORT || 5000;
