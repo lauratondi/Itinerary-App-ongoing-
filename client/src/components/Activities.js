@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 // import userIcon from '../images/userIcon.png'
 // import { Link } from 'react-router-dom';
 import { CardBody, Card } from 'reactstrap';
+// import Comments from './Comments';
 
 
 class Activities extends Component {
@@ -29,6 +30,7 @@ class Activities extends Component {
                         <CardBody> {activity.title} </CardBody>
                     </Card>
                 )}
+
             </div>
         )
 

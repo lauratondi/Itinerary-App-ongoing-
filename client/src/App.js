@@ -6,6 +6,8 @@ import Footer from './components/Footer';
 import Itineraries from './components/Itineraries';
 import Login from './components/Login';
 import User from './components/User';
+import Comments from './components/Comments';
+
 
 
 class App extends Component {
@@ -17,6 +19,7 @@ class App extends Component {
             <Route exact path='/' component={Landing} />
             <Route path='/cities' component={Cities} />
             <Route path='/itineraries/:city' component={Itineraries} />
+            <Route path='/itineraries/:id' component={Comments} />
             <Route path='/login' component={Login} />
             <Route path='/user' component={User} />
             <Route exact path='/' component={Footer} />

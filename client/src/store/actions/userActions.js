@@ -24,13 +24,14 @@ export const userFailure = (error) => {
     }
 };
 
-export const fetchUser = (email, password) => {
-    console.log(email, password)
+export const fetchUser = (email, password, username) => {
+    console.log(email, password, username)
     return (dispatch) => {
         dispatch(userRequest())
         axios.post("/user", {
             'email': email,
-            'password': password
+            'password': password,
+            'username': username
         }, {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'

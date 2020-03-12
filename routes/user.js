@@ -8,7 +8,7 @@ const keys = require('../keys')
 
 router.post('/', (req, res) => {
     console.log(req.body)
-    const { email, password } = JSON.parse(Object.keys(req.body)[0]);
+    const { email, password, username } = JSON.parse(Object.keys(req.body)[0]);
     // Simple validation
     if (!email || !password) {
         return res.status(405).json({ msg: 'Please enter the fields' })
@@ -20,7 +20,8 @@ router.post('/', (req, res) => {
 
             const newUser = new userModel({
                 email,
-                password
+                password,
+                username
             });
 
             // Create salt & hash
@@ -42,7 +43,8 @@ router.post('/', (req, res) => {
                                         token,
                                         user: {
                                             id: user.id,
-                                            email: user.email
+                                            email: user.email,
+                                            username: user.username
                                         }
                                     });
                                 }

@@ -5,7 +5,10 @@ import { fetchItineraryList } from '../store/actions/itineraryActions';
 import userIcon from '../images/userIcon.png'
 import { Link } from 'react-router-dom';
 import CityCard from './CityCard';
-import Activities from './Activities'
+import Activities from './Activities';
+import Comments from './Comments';
+
+
 import { Button, UncontrolledCollapse } from 'reactstrap';
 
 
@@ -67,6 +70,7 @@ class Itineraries extends Component {
 
                         <UncontrolledCollapse toggler="#toggler">
                             <Activities activities={itinerary.activities} />
+                            <Comments comments={itinerary.comments} />
                         </UncontrolledCollapse>
 
                     </div>
