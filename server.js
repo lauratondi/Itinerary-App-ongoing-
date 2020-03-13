@@ -41,7 +41,7 @@ app.use('/cities', require('./routes/cities'));
 app.use('/itineraries', require('./routes/itineraries'))
 app.use('/user', require('./routes/user'))
 app.use('/login', require('./routes/login'));
-app.use('/comments', require('./routes/itineraries/comments'))
+app.use('/comments', require('./routes/comments'))
 
 
 // ADDING HEROKU

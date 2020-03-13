@@ -3,12 +3,12 @@ const router = express.Router();
 const commentModel = require('../model/commentModel');
 const auth = require('../middleware/auth');
 
-router.get(`/itineraries/${id}`,
+router.get('/:id',
     (req, res) => {
-        let itineraryId = req.params.itineraries.id;
-        commentModel.find({ comment: itineraryId })
-            .then(comment => {
-                res.send(comment)
+        let itineraryId = req.params.id;
+        commentModel.find({ itinerayId: itineraryId })
+            .then(comments => {
+                res.send(comments)
             })
             .catch(err => console.log(err))
 

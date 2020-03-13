@@ -70,7 +70,7 @@ class Itineraries extends Component {
 
                         <UncontrolledCollapse toggler="#toggler">
                             <Activities activities={itinerary.activities} />
-                            <Comments comments={itinerary.comments} />
+                            <Comments itineraryId={itinerary._id} />
                         </UncontrolledCollapse>
 
                     </div>

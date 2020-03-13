@@ -12,9 +12,10 @@ class Comments extends Component {
     }
 
     componentDidMount() {
-        let id = window.location.pathname.split('/')[1]
-        this.setState({ id })
-        this.props.fetchComments(id)
+        let { itineraryId } = this.props
+        // this.setState({ id })
+        this.props.fetchComments(itineraryId)
+        // itineraryId defined in Itinerary components line 73
     }
 
     render() {

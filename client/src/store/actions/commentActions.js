@@ -26,7 +26,7 @@ export const fetchCommentsFailure = (error) => {
 export const fetchComments = (id) => {
     return function (dispatch) {
         dispatch(fetchCommentsRequest())
-        return fetch(`/itineraries/${id}`)
+        return fetch(`/comments/${id}`)
             .then(
                 response => response.json(),
                 console.log("comment?"),
