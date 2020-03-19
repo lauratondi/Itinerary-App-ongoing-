@@ -64,7 +64,9 @@ class Login extends Component {
             return (
                 <div >
                     <p>{user.email}</p>
+
                     <Logout />
+                    <Footer />
                 </div>
             )
     }

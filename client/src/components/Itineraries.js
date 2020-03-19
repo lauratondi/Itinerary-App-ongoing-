@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import CityCard from './CityCard';
 import Activities from './Activities';
 import Comments from './Comments';
+import CommentsPost from './CommentsPost';
 import { Button } from 'reactstrap';
 
 
@@ -79,24 +80,28 @@ class Itineraries extends Component {
 
                     <div className="viewAll">
 
-                        <Button color="tranparent" id="show" onClick={this.handleClick} >
-
-                            {
-                                this.state.showContent ?
+                        {
+                            this.state.showContent ?
 
                                 <React.Fragment>
-                                        
-                                    v View All v
-                                    </React.Fragment>
-                                    : <React.Fragment> Close
-                                    
-                                        <Activities activities={itinerary.activities} />
-                                        <Comments itineraryId={itinerary._id} />
-                                    
-                                        </React.Fragment>
+                                    <Button color="tranparent" id="show" onClick={this.handleClick} >
+                                        <center> v View All v </center>
+                                    </Button>
+                                </React.Fragment>
+
+                                : <React.Fragment>
+                                    <Button color="tranparent" id="show" onClick={this.handleClick} >
+                                        <center>Close</center>
+                                    </Button>
+
+                                    <Activities activities={itinerary.activities} />
+                                    <Comments itineraryId={itinerary._id} />
+                                    <CommentsPost />
+
+                                </React.Fragment>
                         }
 
-                        </Button>
+
 
                     </div>
 

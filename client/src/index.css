@@ -160,6 +160,14 @@ flex-direction: row;
 margin-right: 1px;
 }
 
+/* ------------COMMENTS COMPONENT------------- */
+
+.comments-list{
+  display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 /* -------------NEW ACCOUNT PAGE ------------------ */
 
 .form-container{
