@@ -43,7 +43,7 @@ class Comments extends Component {
                 <div className="flex-container">
 
                     <div className="comments-list">
-                        <h2>Comments:</h2>
+                        <h3>Comments:</h3>
                         {commentsList}
                     </div>
 

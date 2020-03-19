@@ -7,9 +7,7 @@ import { Link } from 'react-router-dom';
 import CityCard from './CityCard';
 import Activities from './Activities';
 import Comments from './Comments';
-
-
-import { Button, UncontrolledCollapse } from 'reactstrap';
+import { Button } from 'reactstrap';
 
 
 class Itineraries extends Component {
@@ -19,15 +17,32 @@ class Itineraries extends Component {
         this.state = {
             city: '',
             // I need it for the child component CityCard
+
+            showContent: true,
         }
+
+        this.handleClick = this.handleClick.bind(this)
+
     }
+
 
     componentDidMount() {
         let city = window.location.pathname.split('/')[2]
+
         this.setState({ city })
         // I need the setState for the child component CityCard
+
         this.props.fetchItineraryList(city);
     }
+
+
+    handleClick = (e) => {
+        this.setState(prevState => ({
+            showContent: !prevState.showContent
+        }));
+    }
+
+
 
     render() {
         const { itineraries } = this.props
@@ -64,20 +79,31 @@ class Itineraries extends Component {
 
                     <div className="viewAll">
 
-                        <Button color="tranparent" id="toggler" >
-                            <p>v View All v</p>
-                        </Button>
+                        <Button color="tranparent" id="show" onClick={this.handleClick} >
 
-                        <UncontrolledCollapse toggler="#toggler">
-                            <Activities activities={itinerary.activities} />
-                            <Comments itineraryId={itinerary._id} />
-                        </UncontrolledCollapse>
+                            {
+                                this.state.showContent ?
+
+                                <React.Fragment>
+                                        
+                                    v View All v
+                                    </React.Fragment>
+                                    : <React.Fragment> Close
+                                    
+                                        <Activities activities={itinerary.activities} />
+                                        <Comments itineraryId={itinerary._id} />
+                                    
+                                        </React.Fragment>
+                        }
+
+                        </Button>
 
                     </div>
 
                 </div>
             )
         })
+
         const { loading } = this.props;
 
         if (!loading)
