@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Footer from './Footer';
 import Logout from './Logout';
 import { fetchLogin } from '../store/actions/loginActions';
+import User from './User';
 
 class Login extends Component {
     constructor(props) {
@@ -13,6 +14,7 @@ class Login extends Component {
         }
     }
 
+
     handleChange = (e) => {
         this.setState({
             [e.target.id]: e.target.value
@@ -22,13 +24,15 @@ class Login extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        this.props.fetchLogin(this.state.email, this.state.password)
+        this.props.fetchLogin(this.state.email, this.state.password);
+
+        this.props.history.push('/cities')
     }
 
     render() {
 
         const { user, isAuthenticated } = this.props;
-        console.log(this.props)
+
         if (!isAuthenticated)
             return (
                 <div className="form-container">
@@ -63,7 +67,7 @@ class Login extends Component {
         else
             return (
                 <div >
-                    <p>{user.email}</p>
+                    <p>Hi {user.email}!</p>
 
                     <Logout />
                     <Footer />

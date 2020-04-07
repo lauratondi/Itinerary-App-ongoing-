@@ -4,7 +4,7 @@ const COMMENT_POST_FAILURE = 'COMMENT_POST_FAILURE';
 
 const initialState = {
     loading: true,
-    comment: [],
+    comments: [],
     error: ''
 }
 
@@ -19,14 +19,14 @@ export default function commentPostReducer(state = initialState, action) {
         case COMMENT_POST_SUCCESS:
             return {
                 loading: false,
-                comment: action.payload,
+                comments: action.payload,
                 error: ''
             }
 
         case COMMENT_POST_FAILURE:
             return {
                 loading: false,
-                comment: [],
+                comments: [],
                 error: action.payload
             }
 

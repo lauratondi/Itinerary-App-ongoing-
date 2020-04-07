@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchComments } from '../store/actions/commentActions'
+import CommentsPost from './CommentsPost';
 
 
 class Comments extends Component {
@@ -38,6 +39,7 @@ class Comments extends Component {
 
         const { loading } = this.props;
 
+
         if (!loading)
             return (
                 <div className="flex-container">
@@ -46,6 +48,7 @@ class Comments extends Component {
                         <h3>Comments:</h3>
                         {commentsList}
                     </div>
+                    {/* <CommentsPost /> */}
 
                 </div>
             )

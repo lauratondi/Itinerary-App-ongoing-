@@ -27,10 +27,13 @@
     "eslint": "^6.8.0",
     "express": "^4.17.1",
     "express-validator": "^6.4.0",
+    "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.8.11",
     "node": "^12.2.0",
     "nodemon": "^2.0.2",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.17",
@@ -39,6 +42,7 @@
     "reactstrap": "^8.4.1",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
+    "validator": "^13.0.0",
     "whatwg-fetch": "^3.0.0"
   }
 }

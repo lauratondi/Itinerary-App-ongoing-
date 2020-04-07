@@ -7,7 +7,7 @@ const commentSchema = new mongoose.Schema({
         type: String,
 
     },
-    itieraryId: {
+    itineraryId: {
         type: String,
     },
     date: {

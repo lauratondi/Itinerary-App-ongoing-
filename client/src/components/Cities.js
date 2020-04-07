@@ -17,6 +17,7 @@ class Cities extends Component {
 
     componentDidMount() {
         this.props.fetchCityList()
+
     }
 
     handleChange = (e) => {
@@ -46,7 +47,6 @@ class Cities extends Component {
 
     render() {
         const { loading } = this.props;
-
         if (!loading)
             return (
                 <div className="flex-container">
@@ -57,7 +57,9 @@ class Cities extends Component {
                             value={this.state.cityFilter}
                             onChange={this.handleChange.bind(this)} />
                     </div>
-
+                    {/* <div>
+                        <p>Hi {this.props.user.email}!</p>
+                    </div> */}
                     <div className="city-list">
                         <ul>
                             {this.filterCities().map((city) => {

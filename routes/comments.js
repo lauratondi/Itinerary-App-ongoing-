@@ -6,7 +6,7 @@ const auth = require('../middleware/auth');
 router.get('/:id',
     (req, res) => {
         let itineraryId = req.params.id;
-        commentModel.find({ itinerayId: itineraryId })
+        commentModel.find({ itineraryId: itineraryId })
             .then(comments => {
                 res.send(comments)
             })
@@ -15,13 +15,15 @@ router.get('/:id',
 
     })
 
-router.post('/', auth, (req, res) => {
+router.post('/:id', auth, (req, res) => {
+    console.log("in the function")
     const newComment = new commentModel({
-        userId: req.body.user.id,
-        itineraryId: req.body.itinerary.id,
+        userId: req.body.userId,
+        itineraryId: req.body.itineraryId,
         date: req.body.date,
         text: req.body.text
     })
+    console.log("comment created")
     newComment.save()
         .then(comment => {
             res.send(comment)

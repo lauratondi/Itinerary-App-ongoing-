@@ -13,12 +13,21 @@ class User extends Component {
             firstName: '',
             lastName: '',
             country: '',
+            errors: {}
         }
     }
 
     // componentDidMount() {
     //     this.props.fetchUser()
     // }
+
+    UNSAFE_componentWillReceiveProps(nextProps) {
+        if (nextProps.errors) {
+            this.setState({
+                errors: nextProps.errors
+            });
+        }
+    }
 
     handleChange = (e) => {
         this.setState({
@@ -28,11 +37,14 @@ class User extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        this.props.fetchUser(this.state.email, this.state.password)
+        this.props.fetchUser(this.state.email, this.state.password);
+
+        this.props.history.push('/login')
     }
 
 
     render() {
+        console.log(this.user)
         return (
             <div className='form-container'>
                 <h3><center>Create Account</center></h3>
